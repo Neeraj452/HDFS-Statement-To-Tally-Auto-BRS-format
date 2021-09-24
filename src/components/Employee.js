@@ -1,34 +1,80 @@
-import React from 'react'
+import React, {useState} from 'react'
 import { useSelector, useDispatch } from 'react-redux';
-import {ID,Username,Full_name,Company,AddList} from '../actions/AccountStatementAction'
-import EmployeeDerails from '../components/EmployeeDerails';
+import {addList, employeeUpdate,dataDelete} from '../actions/AccountStatementAction'
+
 
 function Employee() {
+
+      const [username, setUsername] = useState("");
+      const [full_name, setFull_name] = useState("");
+      const [company, setCompany] = useState("");
       const dispatch = useDispatch()
       const myState = useSelector((store)=> store.accountStatementReducer )
-      console.log(myState.ArrayData)
+
+      const handleSubmit= (e)=>{
+            e.preventDefault();
+            const data = {
+                  id: myState.EmployeeData.length > 0 ? myState.EmployeeData[myState.EmployeeData.length - 1].id + 1 : 1,
+                  username,
+                  full_name,
+                  company,
+                };
+            dispatch(addList(data))
+      }
+      
       return (
             <div>
                   <h3 className="heading">Employee Table</h3>
-                <table className="table">
+                  <form onSubmit={handleSubmit}>
+                <table className="table table-striped">
+                     
                       <tr>
-                      <th>ID</th>
+                      <th>Serial NO.</th>
                       <th>Username</th>
                       <th>Full name</th>
                       <th>Company</th>
                       <th>ADD</th>
                       </tr>
+                 
+                      <tbody>
                       <tr>
-                            <td><input  type="text" onChange={(event)=> dispatch(ID(event.target.value))}   value={myState.id}/></td>
-                            <td><input  type="text" onChange={(event)=> dispatch(Username(event.target.value))}   value={myState.username}/></td>
-                            <td><input  type="text" onChange={(event)=> dispatch(Full_name(event.target.value))}   value={myState.full_name}/></td>
-                            <td><input  type="text" onChange={(event)=> dispatch(Company(event.target.value))}   value={myState.company}/></td>
-                            <td><button onClick={()=>dispatch(AddList())}>ADD</button></td>
+                            <td><input  type="text" value="#"/></td>
+                            <td><input  type="text" onChange={(event)=> setUsername(event.target.value)}  value={username}/></td>
+                            <td><input  type="text" onChange={(event)=> setFull_name(event.target.value)}   value={full_name}/></td>
+                            <td><input  type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
+                            <td><button type="submit" className="btn-primary" >ADD</button></td>
+                            
                       </tr>
+                      </tbody>
+                      { 
+                     myState.EmployeeData.map((Element,index)=>{
+                           const {id,username,full_name,company}=Element;
+                           return (
+                                 <tbody>
+                                 <tr>
+                                       <td><input  className ="input1" value={id}/></td>
+                                       <td><input className ="input1" value={username} onChange={(event)=> dispatch(employeeUpdate({
+                                                   index: index,
+                                                   type: 'username',
+                                                   value: event.target.value
+                                                     }))} /></td>   
+                                       <td><input className ="input1"  onChange ={(event)=>dispatch(employeeUpdate({
+                                             index:index,
+                                             type:'fullname',
+                                             value:event.target.value}))} value={full_name}/></td>
+                                       <td> <input className ="input1" onChange={(event)=> dispatch(employeeUpdate({
+                                             index:index,
+                                             type:'company',
+                                             value:event.target.value}))} value={company}/></td>
+                                       <td><button onClick={()=>dispatch(dataDelete(id))} className="btn-danger">Delete</button></td>
+                                  </tr>
+                                  </tbody>
+                           )
+                           
+                     })
+               }
                 </table>
-                <EmployeeDerails/>
-                
-               
+                </form>
             </div>
       )
 }

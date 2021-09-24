@@ -1,27 +1,32 @@
 .Employee1{
-      text-align: center;
+      margin-left: 360px;
       margin-top: 20px;
 }
-.Employee1 input{
-      text-align: center;
-      margin-left: 20px;
+.Employee1 input[type=text]{
+      width: 320px;
+      padding: 20px 20px 20px 20px;
+      margin-left: 280px;
+      border-radius: 5px;
+      box-sizing: border-box;
 }
 
 .Employee{
-      text-align: center;
+      margin-left: 360px;
 }
-.Employee input{
-      text-align: center;
-      margin-left: 50px;
+.Employee input[type=text]{
+      width: 320px;
+      padding: 20px 20px 20px 20px;
+      margin-left: 330px;
+      border-radius: 5px;
+      box-sizing: border-box;
 }
 .btn1{
       text-align: center;
-      margin-left: 700px;
+      margin-left: 350px;
       margin-top: 50px;
-      background-color: blue;
       color: white;
-      width: 80px;
-      height: 30px;
+      width: 800px;
+      height: 50px;
       text-decoration: none;
     
 }
@@ -33,15 +38,18 @@
 .heading{
       text-align: center;
 }
-.input1 tr td input:focus {
-      outline: none;
-
+.lebel1{
+      font-weight: 300px;
+      font-size: 150%;
+      font-family:  'Arial', sans-serif;
+     
 }
-.input1{
-      border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        border-bottom-style: hidden;
-        background-color: #eee;
 
+.lebel2{
+      font-weight: 300px;
+      font-size: 150%;
+      font-family:  'Arial', sans-serif;
+     
+      
+      
 }

@@ -5,6 +5,8 @@ import { Route, Switch} from 'react-router-dom';
 import HomeScreen from "./components/HomeScreen";
 import UserInput from "./components/UserInput"
 import Employee from "./components/Employee";
+import UploadRecord from "./components/UploadRecord";
+import Report from "./components/Report";
 
 
 const  App= ()=> {
@@ -17,6 +19,12 @@ const  App= ()=> {
     </Route>
     <Route path="/Employee">
       <Employee />
+    </Route>
+    <Route path="/UploadRecord">
+      <UploadRecord />
+    </Route>
+    <Route path="/Report">
+      <Report />
     </Route>
     </Switch>
     </div>

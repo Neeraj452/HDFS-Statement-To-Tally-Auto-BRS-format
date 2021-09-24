@@ -1,59 +1,27 @@
 import Config from "../utils/Config";
 
-export const ID = (res) => ({
-    type: 'getID',
+export const addList = (res) => ({
+    type: Config.ADD,
     data:res
-});
-
-export const Username = (res) => ({
-    type: 'getUsername',   
-    data:res
-});
-
-export const Full_name = (res) => ({
-    type: 'getFull_name',
-    data:res
-});
-
-export const Company = (res) => ({
-    type: 'getCompany',
-    data:res
-});
-
-export const AddList = () => ({
-    type: 'getAdd',
    
 });
 
-export const User_ID = (res) => ({
-    type: 'Update_UserID',
+export const dataDelete = (res) => ({
+    type: Config.DELETE,
     data:res
 });
 
-export const DeleteData = (res) => ({
-    type: 'Delete',
-    data:res
-});
-
-export const User_Username = (res) => ({
-    type: 'Update_Username',
-    data:res
-});
-
-export const User_Full_name = (res) => ({
-    type: 'Update_Full_name',
-    data:res
-});
-
-export const User_Company = (res) => ({
-    type: 'Update_Company',
-    data:res
-});
 
 export const employeeUpdate = (res) => ({
     type: Config.EMPLOYEE_UPDATE,
     data:res
 });
+
+export const fullnameUpdate = (res) => ({
+    type: Config.FULLNAME_UPDATE,
+    data:res
+});
+
 
 
 

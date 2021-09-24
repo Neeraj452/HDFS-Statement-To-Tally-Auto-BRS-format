@@ -1,11 +1,11 @@
 import React, { Fragment, createRef } from "react";
-import { Button, DropdownButton, Dropdown } from 'react-bootstrap'
-import {FilePicker} from 'react-file-picker'
+// import { Button, DropdownButton, Dropdown } from 'react-bootstrap'
+// import {FilePicker} from 'react-file-picker'
 import Config from "../utils/Config";
 import { userDetailsClear, showStateToFalse, convertButtonClick, accDetailsStatus, onAccountsFetched} from '../actions/AccountStatementAction'
 import { connect } from "react-redux";
 import Dropzone from 'react-dropzone'
-import RJSlogo from '../assets/rjs-logo.png'
+// import RJSlogo from '../assets/rjs-logo.png'
 import { bindActionCreators } from "redux";
 import XLSCSVFileTransformer from "../utils/XLSCSVFileTransformer";
 import AccountNumbersUtils from "../utils/AccountNumbersUtils";
@@ -60,14 +60,14 @@ import { NavLink} from 'react-router-dom';
 
 
                                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                               <li> <NavLink className="btn1
-                                               
-                                               
-                                               dropdown-item" to="/Employee">Login</NavLink></li>
-                                               {/* <li><a class="dropdown-item" href="#">Employee</a></li> */}
-                                                <li><a class="dropdown-item" href="#"> Upload record</a></li>
-                                                <li><a class="dropdown-item" href="#">Report</a></li>
-                                            </ul>
+                                            <li> <NavLink className="
+                                            dropdown-item" to="/Employee">Employee</NavLink></li>
+                                             
+                                            <li> <NavLink className="
+                                            dropdown-item" to="/UploadRecord">Upload Record"</NavLink></li>
+                                            <li> <NavLink className="
+                                            dropdown-item" to="/Report">Report</NavLink></li>
+                                      </ul>
                                      {/* <div className="dropdown-menu">
                                          {this.props.accountStatement.allusers && this.props.accountStatement.allusers.length ? <Fragment>
                                              {this.props.accountStatement.show && <a onClick={this.props.showStateToFalse} className="dropdown-item p-0 px-2 pointer mb-1">Select Account Name CSV</a>}
@@ -79,7 +79,7 @@ import { NavLink} from 'react-router-dom';
 
                                      </div> */}
                                  </li>
-                                 <li><a className="nav-item nav-link pointer" href="mailto:info@rjs.in" target="_blank" >Contact</a></li>
+                                 {/* <li><a className="nav-item nav-link pointer" href="mailto:info@rjs.in" target="_blank" >Contact</a></li> */}
                              </ul>
                          </div>
                      </div>

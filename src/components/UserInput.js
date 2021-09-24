@@ -1,18 +1,21 @@
 import React from 'react'
-import { NavLink} from 'react-router-dom';
+import { useHistory } from 'react-router';
 
 
 const UserInput=()=> {
+      const history = useHistory() 
+      const handleSubmit=()=>{
+            history.push('/Employee')
+      }
       return (
             <div>
                   <div className="Employee">
-                  <h1>Hii Employee</h1>
-                  <lebel>AWS Token</lebel><input type="text"/>
+                  <lebel className="lebel1">AWS Token</lebel><input type="text" value="**************"></input>
                   </div>
                   <div className="Employee1">
-                  <lebel>AWS Secret Key</lebel><input type="text"/>
+                  <lebel className="lebel2">AWS Secret Key</lebel><input type="text" value="AKIAJSIE27KKMHXI3BJQ"/>
                   </div>
-                 <NavLink type="button" className="btn1" to="/Employee">Login</NavLink>
+                 <button type="button" className="btn1 btn-primary" onClick={handleSubmit}>Submit</button>
                  </div>
       )
 }
