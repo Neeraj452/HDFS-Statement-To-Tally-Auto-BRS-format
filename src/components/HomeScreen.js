@@ -54,7 +54,7 @@ import { NavLink} from 'react-router-dom';
                          </button>
                          <div className="navbar-collapse collapse" id="navbarCollapse">
                              <ul className="navbar-nav nav-pills ml-auto mt-2">
-                                 {this.props.accountStatement.allusers && this.props.accountStatement.allusers.length ? <li className="nav-item"><a onClick={this.convertHandle} className={`nav-link pointer ${this.props.accountStatement.show ? 'active' : ''}`}>Convert</a></li> : ""}
+                                 {/* {this.props.accountStatement.allusers && this.props.accountStatement.allusers.length ? <li className="nav-item"><a onClick={this.convertHandle} className={`nav-link pointer ${this.props.accountStatement.show ? 'active' : ''}`}>Convert</a></li> : ""} */}
                                  <li className="nav-item dropdown">
                                      <a className="nav-link dropdown-toggle pointer" data-toggle="dropdown">Menu</a>
 
@@ -64,7 +64,7 @@ import { NavLink} from 'react-router-dom';
                                             dropdown-item" to="/Employee">Employee</NavLink></li>
                                              
                                             <li> <NavLink className="
-                                            dropdown-item" to="/UploadRecord">Upload Record"</NavLink></li>
+                                            dropdown-item" to="/UploadRecord">Upload Record</NavLink></li>
                                             <li> <NavLink className="
                                             dropdown-item" to="/Report">Report</NavLink></li>
                                       </ul>
@@ -103,10 +103,10 @@ import { NavLink} from 'react-router-dom';
                         >
                             {({ getRootProps, getInputProps }) => (
                                 <section>
-                                    <div {...getRootProps()} style={{ height: '150px', textAlign: 'center', alignItems: 'center' }} ref={this.textInput}>
+                                    {/* <div {...getRootProps()} style={{ height: '150px', textAlign: 'center', alignItems: 'center' }} ref={this.textInput}>
                                         <input {...getInputProps()} />
                                         <p className="pt-5">Drag and drop file to convert</p>
-                                    </div>
+                                    </div> */}
                                 </section>
                             )}
                         </Dropzone>

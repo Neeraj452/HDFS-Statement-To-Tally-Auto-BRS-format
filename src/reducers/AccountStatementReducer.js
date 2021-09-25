@@ -10,14 +10,29 @@ const INITIAL_STATE = {
     username:"",
     full_name:"",
     company:"",
-    EmployeeData:[]
+    EmployeeData:[],
+    FileData:[]
 }
 
+
 export function accountStatementReducer (state = INITIAL_STATE, action) {
+   
     const { payload } = action;
     switch(action.type) {
 
             case Config.ADD:
+                state.EmployeeData.sort((a, b) => {
+                    let fa = a.full_name.toLowerCase(),
+                        fb = b.full_name.toLowerCase();
+                
+                    if (fa < fb) {
+                        return -1;
+                    }
+                    if (fa > fb) {
+                        return 1;
+                    }
+                    return 0;
+                   });
                 return {
                 ...state,
                 EmployeeData:[
@@ -26,13 +41,12 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                 ]}
 
             case Config.DELETE:
-               
-                state.EmployeeData= state.EmployeeData.filter((Element)=>{
-                    console.log("Element", Element.id,action.data)
+                state.EmployeeData= state.EmployeeData.filter((Element)=>
+                 (Element.id !==action.data)
                 
-                return Number(Element.id)!==Number(action.data)}
                 )
                 return {...state}
+                
 
             case Config.EMPLOYEE_UPDATE:
                 let index = action.data.index;
@@ -49,6 +63,22 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                     employee.company=value;
                 }
                 return {...state}
+            case Config.FILEUPLOAD:
+                return {
+                    ...state,
+                    FileData:[
+                        ...state.FileData,
+                           action.data
+                        
+                    ]}
+               
+
+
+
+
+
+
+
             case 'CLEAR_DATAS':
                 return {
                     ...state,

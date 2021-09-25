@@ -48,8 +48,14 @@
 .lebel2{
       font-weight: 300px;
       font-size: 150%;
-      font-family:  'Arial', sans-serif;
-     
-      
-      
+      font-family:  'Arial', sans-serif;  
+}
+.btn-primary {
+      width: 100px;
+}
+.input2{
+      margin-left: 200px;
+}
+.btn-danger{
+      width: 100px;
 }

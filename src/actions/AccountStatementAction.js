@@ -3,7 +3,6 @@ import Config from "../utils/Config";
 export const addList = (res) => ({
     type: Config.ADD,
     data:res
-   
 });
 
 export const dataDelete = (res) => ({
@@ -19,6 +18,11 @@ export const employeeUpdate = (res) => ({
 
 export const fullnameUpdate = (res) => ({
     type: Config.FULLNAME_UPDATE,
+    data:res
+});
+
+export const fileUpload = (res) => ({
+    type: Config.FILEUPLOAD,
     data:res
 });
 

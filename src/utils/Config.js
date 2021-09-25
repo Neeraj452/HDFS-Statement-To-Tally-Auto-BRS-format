@@ -1,6 +1,7 @@
 
 
 const Config = {
+    FILEUPLOAD:"FILEUPLOAD",
     ADD:"ADD",
     DELETE:"DELETE",
     EMPLOYEE_UPDATE:"EMPLOYEE_UPDATE",
