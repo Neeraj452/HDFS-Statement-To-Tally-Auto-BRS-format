@@ -15,7 +15,7 @@ const UserInput=()=> {
                   <div className="Employee1">
                   <lebel className="lebel2">AWS Secret Key</lebel><input type="text" value="AKIAJSIE27KKMHXI3BJQ"/>
                   </div>
-                 <button type="button" className="btn1 btn-primary" onClick={handleSubmit}>Submit</button>
+                 <button type="button" className="btn1" onClick={handleSubmit}>Submit</button>
                  </div>
       )
 }

@@ -16,23 +16,9 @@ const INITIAL_STATE = {
 
 
 export function accountStatementReducer (state = INITIAL_STATE, action) {
-   
     const { payload } = action;
     switch(action.type) {
-
             case Config.ADD:
-                state.EmployeeData.sort((a, b) => {
-                    let fa = a.full_name.toLowerCase(),
-                        fb = b.full_name.toLowerCase();
-                
-                    if (fa < fb) {
-                        return -1;
-                    }
-                    if (fa > fb) {
-                        return 1;
-                    }
-                    return 0;
-                   });
                 return {
                 ...state,
                 EmployeeData:[
@@ -45,8 +31,7 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                  (Element.id !==action.data)
                 
                 )
-                return {...state}
-                
+                return {...state}   
 
             case Config.EMPLOYEE_UPDATE:
                 let index = action.data.index;
@@ -63,14 +48,23 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                     employee.company=value;
                 }
                 return {...state}
+                
             case Config.FILEUPLOAD:
-                return {
-                    ...state,
-                    FileData:[
-                        ...state.FileData,
-                           action.data
+                state.FileData = JSON.parse(localStorage.getItem("FileData"))
+                state.FileData === null && localStorage.setItem("FileData",JSON.stringify(state.FileData=[]))
+                state.FileData = JSON.parse(localStorage.getItem("FileData"))
+                state.FileData.length >0 ? state.FileData = JSON.parse(localStorage.getItem("FileData")) : state.FileData =[] 
+                state.FileData.push(action.data)
+                localStorage.setItem("FileData",JSON.stringify(state.FileData))
+                return {...state}
+                // return {
+                //     ...state,
+                //     FileData:[
+                //         ...state.FileData,
+                //            action.data
                         
-                    ]}
+                //     ]}
+
                
 
 

@@ -21,13 +21,14 @@
       box-sizing: border-box;
 }
 .btn1{
-      text-align: center;
-      margin-left: 350px;
-      margin-top: 50px;
+     
+      margin: 50px 0px 0px 350px;
       color: white;
-      width: 800px;
+      background-color: dodgerblue;
       height: 50px;
-      text-decoration: none;
+      width: 800px;
+      
+     
     
 }
 
@@ -58,4 +59,10 @@
 }
 .btn-danger{
       width: 100px;
+}
+.uploadFile{
+      text-align:center ;
+}
+.uploadFile input[type=file]{
+      padding: 20px;
 }
