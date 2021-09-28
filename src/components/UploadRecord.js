@@ -95,10 +95,10 @@ function UploadRecord() {
                      </tbody>
                      <tbody>
                            {   
-                             fileDate && JSON.parse(fileDate).map((Element)=>{
+                             fileDate && JSON.parse(fileDate).map((Element,index)=>{
                                        const {id,name,date} = Element
                                        return (
-                                             <tr><td>{id}</td>
+                                             <tr><td>{index+1}</td>
                                              <td>{name}</td>
                                              <td >{date}</td>
                                              <td><a href={item} download={name} onClick={Download}><button type="button">Download</button> </a></td></tr>

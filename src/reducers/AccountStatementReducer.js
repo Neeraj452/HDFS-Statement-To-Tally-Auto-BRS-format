@@ -11,7 +11,8 @@ const INITIAL_STATE = {
     full_name:"",
     company:"",
     EmployeeData:[],
-    FileData:[]
+    FileData:[],
+    dataBaseData:[]
 }
 
 
@@ -19,17 +20,37 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
     const { payload } = action;
     switch(action.type) {
             case Config.ADD:
-                return {
-                ...state,
-                EmployeeData:[
-                    ...state.EmployeeData,
-                     action.data
-                ]}
+                function removeDuplicate(data){
+                    let newArray = [];
+                    let uniqueObject = {};
+                    for (let i in data) {
+                        let objfull_name = data[i]['full_name'];
+                        uniqueObject[objfull_name] = data[i];
+                    }
+                      
+                    for (const i in uniqueObject) {
+                        newArray.push(uniqueObject[i]);
+                    }
+                    state.EmployeeData=newArray
+                   }
+              
+                state.dataBaseData=[]
+                state.dataBaseData=state.EmployeeData
+                state.dataBaseData.push(action.data)
+                removeDuplicate(state.dataBaseData)
+                
+                return {...state}
+                // return {
+                // ...state,
+                // EmployeeData:[
+                //     ...state.EmployeeData,
+                //      action.data
+                // ]}
 
             case Config.DELETE:
-                state.EmployeeData= state.EmployeeData.filter((Element)=>
+                console.log("Delelrereefdf",action.data)
+                state.EmployeeData = state.EmployeeData.filter((Element)=>
                  (Element.id !==action.data)
-                
                 )
                 return {...state}   
 
@@ -57,13 +78,7 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                 state.FileData.push(action.data)
                 localStorage.setItem("FileData",JSON.stringify(state.FileData))
                 return {...state}
-                // return {
-                //     ...state,
-                //     FileData:[
-                //         ...state.FileData,
-                //            action.data
-                        
-                //     ]}
+               
 
                
 

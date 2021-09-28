@@ -1,7 +1,6 @@
 import React, {useState,useEffect} from 'react'
 import productdb, {
-      bulkcreate
-} from './DB'
+      bulkcreate,getData} from './DB'
 import { useSelector, useDispatch } from 'react-redux';
 import {addList, employeeUpdate,dataDelete} from '../actions/AccountStatementAction'
 
@@ -12,49 +11,38 @@ function Employee() {
       const [company, setCompany] = useState("");
       const dispatch = useDispatch()
       const myState = useSelector((store)=> store.accountStatementReducer);
-      var db
+      let db = productdb("ProductsDB",{
+            products:'++id,username,full_name,company'})
+        
+      const getData1= ()=> {
+            getData(db.products, data => {
+            dispatch(addList(data))
+          })}
+      
       useEffect(() => {
-            db = productdb("ProductsDB",{
-            products:'++id,name,seller,price'})      
-      })
-      const handleSubmit= (e)=>{
-            e.preventDefault();
+            getData1() 
+      },[])
+     
+    
+      const handleSubmit= ()=>{
             let flag=bulkcreate(db.products,{
-                  name:username,
-                  seller:full_name,
-                  price:company
+                  username:username,
+                  full_name:full_name,
+                  company:company
             })
-            console.log(flag);
-           
-           
-            // if('indexedDb' in window){
-            //       console.log("yor browser not supported")
-            //       return 
-            // }
-            // const dbname = "myDB";
-            // const requestDB = window.indexedDB.open(dbname);
-            // requestDB.onupgradeneeded = ()=>{
-            //    let db = requestDB.result;
-            //    let store = db.createObjectStore("Employee",{autoIncrement:true})
-            //    store.put({username:"neeraj",full_name:"Neeraj Maurya"})
-            //    store.put({username:"dfsdg",full_name:"Nfdfdsga"})
-            //    store.put({username:"dfdfs",full_name:"Neerdfsurya"})
-            // }
-            // const data = {
-            //       id: myState.EmployeeData.length > 0 ? myState.EmployeeData.length + 1 : 1,
-            //       username,
-            //       full_name,
-            //       company,    
-            //     };
-            //     setUsername("")
-            //     setFull_name("")
-            //     setCompany("")
-            // dispatch(addList(data))
-           
+          
+            getData(db.products, data => {
+            dispatch(addList(data))
+                });
+                setUsername("")
+                setFull_name("")
+                setCompany("")
+                
       }
+      
       myState.EmployeeData.sort((a, b) => {
-            let fa = a.full_name.toLowerCase(),
-                fb = b.full_name.toLowerCase();
+            let fa = a.username.toLowerCase(),
+                fb = b.username.toLowerCase();
         
             if (fa < fb) {
                 return -1;
@@ -64,10 +52,19 @@ function Employee() {
             }
             return 0;
            });
+      const update =(id,full_name)=>{
+            db.products.update(id,{"full_name":full_name}) 
+      } 
+
+      const dataDelete1=(id)=>{
+            db.products.delete(id)
+            dispatch(dataDelete(id))
+            
+      }
+      
       return (
             <div>
                   <h3 className="heading">Employee Table</h3>
-                  
                 <table className="table table-striped">
                 <tbody>  
                       <tr>
@@ -87,13 +84,12 @@ function Employee() {
                             
                       </tr>
                       
-                     
-                      <tbody>  
+                  <tbody>  
                       { 
-                     myState.EmployeeData.map((Element,index)=>{
+                     myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
                            const {id,username,full_name,company}=Element;
                            return (<tr>
-                                       <td>{id}</td>
+                                       <td>{index+1}</td>
                                        <td><input className ="input1" value={username} onChange={(event)=> dispatch(employeeUpdate({
                                                    index: index,
                                                    type: 'username',
@@ -102,14 +98,13 @@ function Employee() {
                                        <td><input className ="input1"  onChange ={(event)=>dispatch(employeeUpdate({
                                              index:index,
                                              type:'fullname',
-                                             value:event.target.value}))} value={full_name}/></td>
+                                             value:event.target.value}))} value={full_name} onBlur={()=>update(id,full_name)}/></td>
                                        <td> <input className ="input1" onChange={(event)=> dispatch(employeeUpdate({
                                              index:index,
                                              type:'company',
                                              value:event.target.value}))} value={company}/></td>
 
-                                       <td><button onClick={()=>dispatch(dataDelete(id))} className="btn-danger">Remove</button></td>
-                              
+                                       <td><button  onClick={()=>dataDelete1(id)}  className="btn-danger">Remove</button></td>
                                        </tr>
                            )
                            
