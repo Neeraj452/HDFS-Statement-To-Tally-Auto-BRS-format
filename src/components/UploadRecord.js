@@ -35,12 +35,12 @@ function UploadRecord() {
                   localStorage.setItem(files[0].name, reader.result);
             })
             reader.readAsDataURL(files[0])
-            const monthNames = ["January", "February", "March", "April", "May", "June",
-            "July", "August", "September", "October", "November", "December"
+            const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
+            "July", "Aug", "Sep", "Oct", "Nov", "Dec"
             ];
             const d = new Date();
-            const time = new Date(new Date().getTime() + 4*60*60*1000).toLocaleTimeString()
-            const date =(monthNames[d.getMonth()] +" " + d.getDate() +"," +d.getFullYear() + " "+ time)  
+            const time = new Date(new Date().getTime() + (6*60*60*1000-1800000)).toLocaleTimeString()
+            const date =(monthNames[d.getMonth()] +" " + d.getDate() +" " +d.getFullYear() + " "+ time)  
             const object ={
                   id:myState.FileData.length > 0 ? myState.FileData[myState.FileData.length-1].id + 1 : 1,
                   name:files[0].name,
