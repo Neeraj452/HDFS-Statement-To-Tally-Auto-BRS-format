@@ -66,3 +66,19 @@
 .uploadFile input[type=file]{
       padding: 20px;
 }
+.dropzone-input{
+      border: 5px solid;
+}
+.dropzone-content{
+     
+      width: 500px;
+      margin-left: 550px;
+      padding: 20px;
+}
+.scrallBox{
+      height:100px;
+      width:180px;
+      border:1px solid #4e4e4e;
+      font:16px Arial, Serif;
+      overflow:auto;
+}

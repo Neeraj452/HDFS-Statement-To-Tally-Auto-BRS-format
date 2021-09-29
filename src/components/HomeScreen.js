@@ -5,7 +5,7 @@ import Config from "../utils/Config";
 import { userDetailsClear, showStateToFalse, convertButtonClick, accDetailsStatus, onAccountsFetched} from '../actions/AccountStatementAction'
 import { connect } from "react-redux";
 import Dropzone from 'react-dropzone'
-// import RJSlogo from '../assets/rjs-logo.png'
+import RJSlogo from '../assets/rjs-logo.png'
 import { bindActionCreators } from "redux";
 import XLSCSVFileTransformer from "../utils/XLSCSVFileTransformer";
 import AccountNumbersUtils from "../utils/AccountNumbersUtils";
@@ -46,7 +46,7 @@ import { NavLink} from 'react-router-dom';
              <Fragment>
                  <nav className="navbar navbar-expand-sm mt-2">
                      <div className="container">
-                         {/* <a href="https://rjs.in" target="_blank" className="navbar-brand text-dark"><img src={RJSlogo} alt="RJS" width="25" className="mr-2" /> HDFC Statement Converter</a> */}
+                         <a href="https://rjs.in" target="_blank" className="navbar-brand text-dark"><img src={RJSlogo} alt="RJS" width="25" className="mr-2" /> HDFC Statement Converter</a>
                          <button className="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                              <div className="icon mt-1"></div>
                              <div className="icon my-1"></div>
@@ -79,7 +79,7 @@ import { NavLink} from 'react-router-dom';
 
                                      </div> */}
                                  </li>
-                                 {/* <li><a className="nav-item nav-link pointer" href="mailto:info@rjs.in" target="_blank" >Contact</a></li> */}
+                                 <li><a className="nav-item nav-link pointer" href="mailto:info@rjs.in" target="_blank" >Contact</a></li>
                              </ul>
                          </div>
                      </div>

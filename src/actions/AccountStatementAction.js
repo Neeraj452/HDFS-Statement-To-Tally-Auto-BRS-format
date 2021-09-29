@@ -26,6 +26,11 @@ export const fileUpload = (res) => ({
     data:res
 });
 
+export const fileClear = (res) => ({
+    type: Config.FILECLEAR,
+    data:res
+});
+
 
 
 

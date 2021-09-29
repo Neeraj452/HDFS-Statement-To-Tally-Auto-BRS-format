@@ -79,6 +79,13 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                 localStorage.setItem("FileData",JSON.stringify(state.FileData))
                 return {...state}
                
+            case Config.FILECLEAR:
+                console.log("action.data",action.data)
+                state.FileData = state.FileData.filter((Element)=>
+                (Element.id !==action.data)
+               )
+               localStorage.setItem("FileData",JSON.stringify(state.FileData))
+               return {...state}
 
                
 
