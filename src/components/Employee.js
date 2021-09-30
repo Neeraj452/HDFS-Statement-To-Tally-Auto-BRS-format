@@ -16,8 +16,11 @@ function Employee() {
       
       const getData1= ()=> {
             getData(db.products, data => {
+            if (data===0){
+                  console.log(data)
+            }else{
             dispatch(addList(data))
-            
+            }
           })}
       
       useEffect(() => {
@@ -59,7 +62,12 @@ function Employee() {
       const update =(id,full_name)=>{
             db.products.update(id,{"full_name":full_name}) 
       } 
-
+      const update1 =(id,username)=>{
+            db.products.update(id,{"username":username}) 
+      }
+      const update2 =(id,company)=>{
+            db.products.update(id,{"company":company}) 
+      }
       const dataDelete1=(id)=>{
             db.products.delete(id)
             dispatch(dataDelete(id))
@@ -92,8 +100,8 @@ function Employee() {
                             
                        </tr>
                         <tbody>
-                        { 
-                     myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
+                        {
+                      myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
                            const {id,username,full_name,company}=Element;
                            return (<tr>
                                        <td>{index+1}</td>
@@ -101,7 +109,7 @@ function Employee() {
                                                    index: index,
                                                    type: 'username',
                                                    value: event.target.value
-                                                   }))} /></td>   
+                                                   }))} onBlur={()=>update1(id,username)}/></td>   
                                        <td><input  onChange ={(event)=>dispatch(employeeUpdate({
                                              index:index,
                                              type:'fullname',
@@ -109,7 +117,7 @@ function Employee() {
                                        <td> <input onChange={(event)=> dispatch(employeeUpdate({
                                              index:index,
                                              type:'company',
-                                             value:event.target.value}))} value={company}/></td>
+                                             value:event.target.value}))} value={company} onBlur={()=>update2(id,company)}/></td>
 
                                        <td><button  onClick={()=>dataDelete1(id)}  className="btn-danger">Remove</button></td>
                                        </tr>

@@ -8,7 +8,7 @@ const UserInput=()=> {
             history.push('/Employee')
       }
       return (
-            <div>
+            <div className="UserInput">
                   <div className="Employee">
                   <lebel className="lebel1">AWS Token</lebel><input type="text" value="**************"></input>
                   </div>
@@ -19,5 +19,4 @@ const UserInput=()=> {
                  </div>
       )
 }
-
 export default UserInput;

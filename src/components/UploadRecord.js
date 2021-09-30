@@ -41,7 +41,14 @@ function UploadRecord() {
             const d= new Date();
             const hour = d.getHours()
             const suffix = hour >= 12 ? "PM":"AM";
-            const time = d.getHours() + ":"+ d.getMinutes() +" "+suffix
+            var h = d.getHours()
+            if(h===12){
+                h = 12
+            }
+            else if(h>12){
+                h=h-12
+            }
+            const time = h + ":"+ d.getMinutes() +" "+suffix
             const date =(monthNames[d.getMonth()] +" " + d.getDate() +" " +d.getFullYear() + " "+ time)  
             const object ={
                   id:myState.FileData.length > 0 ? myState.FileData[myState.FileData.length-1].id + 1 : 1,

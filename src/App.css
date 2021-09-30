@@ -1,10 +1,14 @@
+.UserInput{
+      margin-top: 150px;
+}
+
 .Employee1{
       margin-left: 360px;
       margin-top: 20px;
 }
 .Employee1 input[type=text]{
       width: 320px;
-      padding: 20px 20px 20px 20px;
+      padding: 15px 20px 15px 15px;
       margin-left: 280px;
       border-radius: 5px;
       box-sizing: border-box;
@@ -15,7 +19,7 @@
 }
 .Employee input[type=text]{
       width: 320px;
-      padding: 20px 20px 20px 20px;
+      padding: 15px 20px 15px 15px;
       margin-left: 330px;
       border-radius: 5px;
       box-sizing: border-box;
@@ -27,11 +31,12 @@
       background-color: dodgerblue;
       height: 50px;
       width: 800px;
-      
-     
-    
+      border-style: none;
+      transition-duration: 0.4s;
 }
-
+.btn1:hover{
+      background-color: blue;
+}
 .heading{ 
       text-align: center;
 }
@@ -64,8 +69,8 @@
 
       .Employee1 input[type=text]{
             width: 350px;
-            padding: 20px 10px 20px 20px;
-            margin-left: 90px;
+            padding: 15px 20px 15px 15px;
+            margin-left: 105px;
             border-radius: 3px;
             box-sizing: border-box;
       }
@@ -75,7 +80,7 @@
       }
       .Employee input[type=text]{
             width: 350px;
-            padding: 20px 10px 20px 20px;
+            padding: 15px 20px 15px 15px;
             margin-left: 160px;
             border-radius: 3px;
             box-sizing: border-box;
@@ -84,14 +89,14 @@
       .lebel1{
             margin-top: 10px;
             font-weight: 100px;
-            font-size: 200%;
+            font-size: 150%;
             font-family:  'Arial', sans-serif;
            
       }
        
       .lebel2{
             font-weight: 10px;
-            font-size: 200%;
+            font-size: 150%;
             font-family:  'Arial', sans-serif;  
       }
 
@@ -101,14 +106,14 @@
             color: white;
             background-color: dodgerblue;
             height: 50px;
-            width: 680px;
+            width: 630px;
       } 
             
 
 }
 
 
-@media(max-width:450px){
+@media(max-width:450px){ 
 
       .Employee1{
             margin-left: 100px;
