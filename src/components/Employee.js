@@ -13,19 +13,21 @@ function Employee() {
       const myState = useSelector((store)=> store.accountStatementReducer);
       let db = productdb("ProductsDB",{
             products:'++id,username,full_name,company'})
-        
+      
       const getData1= ()=> {
             getData(db.products, data => {
             dispatch(addList(data))
+            
           })}
       
       useEffect(() => {
             getData1() 
+            
       },[])
      
     
       const handleSubmit= ()=>{
-            let flag=bulkcreate(db.products,{
+            bulkcreate(db.products,{
                   username:username,
                   full_name:full_name,
                   company:company
@@ -33,14 +35,15 @@ function Employee() {
           
             getData(db.products, data => {
             dispatch(addList(data))
+           
                 });
                 setUsername("")
                 setFull_name("")
                 setCompany("")
                 
       }
-      
-      myState.EmployeeData.sort((a, b) => {
+    
+       myState.EmployeeData.sort((a, b) => {
             let fa = a.username.toLowerCase(),
                 fb = b.username.toLowerCase();
         
@@ -51,7 +54,8 @@ function Employee() {
                 return 1;
             }
             return 0;
-           });
+           }) 
+      
       const update =(id,full_name)=>{
             db.products.update(id,{"full_name":full_name}) 
       } 
@@ -63,43 +67,46 @@ function Employee() {
       }
       
       return (
-            <div>
-                  <h3 className="heading">Employee Table</h3>
-                <table className="table table-striped">
-                <tbody>  
-                      <tr>
-                      <th>#</th>
-                      <th>Username</th>
-                      <th>Full name</th>
-                      <th>Company</th>
-                      <th>ADD</th>
-                      </tr>
-                      </tbody>  
-                      <tr className="input2">
-                            <td className="input2"></td>
+            <div className="container mb-5">
+            <div className="row">
+             <div className="col-12 mx-auto text-center"> 
+                <h5 className="mb-3">
+                <strong>Employee Table</strong>
+                </h5>
+                    <table className="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Full name</th>
+                            <th>Company</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tr className="input2">
+                       <td className="input2"></td>
                             <td><input  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
                             <td><input  type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
                             <td><input  type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
                             <td><button type="button" onClick={handleSubmit} className="btn-primary">ADD</button></td>
                             
-                      </tr>
-                      
-                  <tbody>  
-                      { 
+                       </tr>
+                        <tbody>
+                        { 
                      myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
                            const {id,username,full_name,company}=Element;
                            return (<tr>
                                        <td>{index+1}</td>
-                                       <td><input className ="input1" value={username} onChange={(event)=> dispatch(employeeUpdate({
+                                       <td><input  value={username} onChange={(event)=> dispatch(employeeUpdate({
                                                    index: index,
                                                    type: 'username',
                                                    value: event.target.value
                                                    }))} /></td>   
-                                       <td><input className ="input1"  onChange ={(event)=>dispatch(employeeUpdate({
+                                       <td><input  onChange ={(event)=>dispatch(employeeUpdate({
                                              index:index,
                                              type:'fullname',
                                              value:event.target.value}))} value={full_name} onBlur={()=>update(id,full_name)}/></td>
-                                       <td> <input className ="input1" onChange={(event)=> dispatch(employeeUpdate({
+                                       <td> <input onChange={(event)=> dispatch(employeeUpdate({
                                              index:index,
                                              type:'company',
                                              value:event.target.value}))} value={company}/></td>
@@ -109,10 +116,14 @@ function Employee() {
                            )
                            
                      })
-               }  </tbody>
-                </table>
-
+               }
+                        </tbody>
+                    </table>
             </div>
+        </div>
+    </div>
+
+            
       )
 }
 

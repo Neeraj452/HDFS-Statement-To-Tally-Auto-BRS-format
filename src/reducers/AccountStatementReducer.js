@@ -40,15 +40,9 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
                 removeDuplicate(state.dataBaseData)
                 
                 return {...state}
-                // return {
-                // ...state,
-                // EmployeeData:[
-                //     ...state.EmployeeData,
-                //      action.data
-                // ]}
+              
 
             case Config.DELETE:
-                console.log("Delelrereefdf",action.data)
                 state.EmployeeData = state.EmployeeData.filter((Element)=>
                  (Element.id !==action.data)
                 )

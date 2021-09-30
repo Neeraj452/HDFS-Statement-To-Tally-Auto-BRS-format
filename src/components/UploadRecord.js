@@ -38,8 +38,10 @@ function UploadRecord() {
             const monthNames = ["Jan", "Feb", "Mar", "April", "May", "June",
             "July", "Aug", "Sep", "Oct", "Nov", "Dec"
             ];
-            const d = new Date();
-            const time = new Date(new Date().getTime() + (6*60*60*1000-1800000)).toLocaleTimeString()
+            const d= new Date();
+            const hour = d.getHours()
+            const suffix = hour >= 12 ? "PM":"AM";
+            const time = d.getHours() + ":"+ d.getMinutes() +" "+suffix
             const date =(monthNames[d.getMonth()] +" " + d.getDate() +" " +d.getFullYear() + " "+ time)  
             const object ={
                   id:myState.FileData.length > 0 ? myState.FileData[myState.FileData.length-1].id + 1 : 1,
@@ -65,22 +67,28 @@ function UploadRecord() {
 }
 
       return ( 
-                  <div className="uploadFile">
-                        <main className="App">
-                        <Dropzone onDrop={onDrop}  />
-                      </main>
-                  <div>
-                <table className="table table-striped mt-5">
-              
-                     <tr>
-                     <th>#</th>
-                     <th>Username</th>
-                     <th>Date</th>
-                     <th></th>
-                     </tr>
-                     
-                     <tbody>       
-                           {   
+         
+            <div className="container mb-5">
+                   <main className="App">
+                  <Dropzone onDrop={onDrop}  />
+                     </main>
+          { fileData.length>0 &&        
+            <div className="row">
+             <div className="col-12 mx-auto text-center"> 
+                <h5 className="mb-3">
+                <strong></strong>
+                </h5>
+                    <table className="table table-striped">
+                        <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Username</th>
+                            <th>Date</th>
+                            <th></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {   
                              fileData &&(fileData).map((Element,index)=>{
                                        const {id,name,date} = Element
                                        return (
@@ -92,11 +100,13 @@ function UploadRecord() {
                                        )
                                  })
                            }
-                          
                         </tbody>
-                        </table>
-                </div>
+                    </table>
             </div>
+            </div>
+              }
+    </div>
+
 
       )
 }

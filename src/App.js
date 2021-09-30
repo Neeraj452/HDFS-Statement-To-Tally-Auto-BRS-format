@@ -12,7 +12,7 @@ import Report from "./components/Report";
 const  App= ()=> {
   return (
     <div>
-      <HomeScreen/>
+  <HomeScreen/>
     <Switch>
     <Route exact path="/">
     <UserInput/>

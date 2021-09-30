@@ -32,11 +32,7 @@
     
 }
 
-.table{
-      width: 1100px;
-      margin-left: 300px;
-}
-.heading{
+.heading{ 
       text-align: center;
 }
 .lebel1{
@@ -54,31 +50,112 @@
 .btn-primary {
       width: 100px;
 }
-.input2{
-      margin-left: 200px;
-}
+
 .btn-danger{
       width: 100px;
 }
-.uploadFile{
-      text-align:center ;
+
+@media(max-width:1110px){
+
+      .Employee1{
+            margin-left: 200px;
+            margin-top: 30px;
+      }
+
+      .Employee1 input[type=text]{
+            width: 350px;
+            padding: 20px 10px 20px 20px;
+            margin-left: 90px;
+            border-radius: 3px;
+            box-sizing: border-box;
+      }
+      .Employee{
+            margin-top: 100px;
+            margin-left:200px;
+      }
+      .Employee input[type=text]{
+            width: 350px;
+            padding: 20px 10px 20px 20px;
+            margin-left: 160px;
+            border-radius: 3px;
+            box-sizing: border-box;
+      }
+
+      .lebel1{
+            margin-top: 10px;
+            font-weight: 100px;
+            font-size: 200%;
+            font-family:  'Arial', sans-serif;
+           
+      }
+       
+      .lebel2{
+            font-weight: 10px;
+            font-size: 200%;
+            font-family:  'Arial', sans-serif;  
+      }
+
+      .btn1{
+            
+            margin: 40px 0px 0px 200px;
+            color: white;
+            background-color: dodgerblue;
+            height: 50px;
+            width: 680px;
+      } 
+            
+
 }
-.uploadFile input[type=file]{
-      padding: 20px;
-}
-.dropzone-input{
-      border: 5px solid;
-}
-.dropzone-content{
-     
-      width: 500px;
-      margin-left: 550px;
-      padding: 20px;
-}
-.scrallBox{
-      height:100px;
-      width:180px;
-      border:1px solid #4e4e4e;
-      font:16px Arial, Serif;
-      overflow:auto;
+
+
+@media(max-width:450px){
+
+      .Employee1{
+            margin-left: 100px;
+            margin-top: 30px;
+      }
+
+      .Employee1 input[type=text]{
+            width: 350px;
+            padding: 20px 10px 20px 20px;
+            margin-left: 130px;
+            border-radius: 3px;
+            box-sizing: border-box;
+      }
+      .Employee{
+            margin-top: 100px;
+            margin-left:100px;
+      }
+      .Employee input[type=text]{
+            width: 350px;
+            padding: 20px 10px 20px 20px;
+            margin-left: 200px;
+            border-radius: 3px;
+            box-sizing: border-box;
+      }
+
+      .lebel1{
+            margin-top: 10px;
+            font-weight: 100px;
+            font-size: 200%;
+            font-family:  'Arial', sans-serif;
+           
+      }
+       
+      .lebel2{
+            font-weight: 10px;
+            font-size: 200%;
+            font-family:  'Arial', sans-serif;  
+      }
+
+      .btn1{
+            
+            margin: 40px 0px 0px 100px;
+            color: white;
+            background-color: dodgerblue;
+            height: 50px;
+            width: 720px;
+      } 
+            
+
 }
