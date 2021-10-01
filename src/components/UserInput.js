@@ -13,13 +13,13 @@ const UserInput=()=> {
       return (
             <div>
              <nav className="navbar navbar-expand-sm">
-            <div className="container mt-5">
+            <div className="container mt-3">
             <a href="https://rjs.in" target="_blank" className="navbar-brand text-dark"><img src={RJSlogo} alt="RJS" width="25" className="mr-2" /> Attendance Reporter</a>
             </div> </nav>
                <div className="container" style={{margin:"160px"}}>
                   <div className="row register">
                      <div className="col-sm-3"></div>
-                     <div className="col-sm-6 col-md-6 .col-lg-6 reg ">
+                     <div className="col-sm-6 col-md-6 .col-lg-6 reg ml-5 ">
                            <form className="form-horizontal hr">
                                  <div className="form-group form-inline">
                                        <div  className="control-label col-sm-7" >
