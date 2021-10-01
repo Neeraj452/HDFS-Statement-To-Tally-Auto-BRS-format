@@ -1,63 +1,69 @@
 .UserInput{
-      margin-top: 150px;
+      margin-top: 110px;
 }
 
 .Employee1{
-      margin-left: 360px;
-      margin-top: 20px;
+      margin-left: 450px;
+      margin-top: 30px;
 }
 .Employee1 input[type=text]{
-      width: 320px;
-      padding: 15px 20px 15px 15px;
-      margin-left: 280px;
-      border-radius: 5px;
-      box-sizing: border-box;
+      width: 300px;
+      padding: 10px 20px 10px 15px;
+      margin-left: 220px;
+      
+    
 }
 
 .Employee{
-      margin-left: 360px;
+      margin-left: 450px;
 }
 .Employee input[type=text]{
-      width: 320px;
-      padding: 15px 20px 15px 15px;
-      margin-left: 330px;
-      border-radius: 5px;
-      box-sizing: border-box;
+      width: 300px;
+      padding: 10px 20px 10px 15px;
+      margin-left: 260px;
+      
+      
 }
 .btn1{
-     
-      margin: 50px 0px 0px 350px;
-      color: white;
-      background-color: dodgerblue;
+      margin: 50px 0px 0px 450px;
+      color:white;
+      background-color: rgb(36, 131, 226);;
       height: 50px;
-      width: 800px;
+      width: 660px;
       border-style: none;
-      transition-duration: 0.4s;
+      border-radius: 10px;
 }
-.btn1:hover{
-      background-color: blue;
-}
+
 .heading{ 
       text-align: center;
 }
 .lebel1{
-      font-weight: 300px;
-      font-size: 150%;
-      font-family:  'Arial', sans-serif;
+      font-size: 120%;
+      font-family:  Arial, sans-serif;
      
 }
 
 .lebel2{
-      font-weight: 300px;
-      font-size: 150%;
-      font-family:  'Arial', sans-serif;  
+      font-size: 120%;
+      font-family:  Arial, sans-serif;  
 }
 .btn-primary {
       width: 100px;
+      height: 42px;
+      border-radius: 8px;
+      border-style: none;
+    
+}
+.dropzone-content{
+      padding: 5px 0px 20px 0px;
 }
 
 .btn-danger{
       width: 100px;
+      height: 42px;
+      border-radius: 8px;
+      border-style: none;
+    
 }
 
 @media(max-width:1110px){
@@ -68,99 +74,50 @@
       }
 
       .Employee1 input[type=text]{
-            width: 350px;
-            padding: 15px 20px 15px 15px;
+            width: 300px;
+            padding: 10px 20px 10px 15px;
             margin-left: 105px;
-            border-radius: 3px;
-            box-sizing: border-box;
+          
+            
       }
       .Employee{
             margin-top: 100px;
             margin-left:200px;
       }
       .Employee input[type=text]{
-            width: 350px;
-            padding: 15px 20px 15px 15px;
-            margin-left: 160px;
-            border-radius: 3px;
-            box-sizing: border-box;
+            width: 300px;
+            padding: 10px 20px 10px 15px;
+            margin-left: 145px;
+            
       }
 
       .lebel1{
             margin-top: 10px;
-            font-weight: 100px;
-            font-size: 150%;
-            font-family:  'Arial', sans-serif;
+            font-size: 120%;
+            font-family:  Arial, sans-serif;
            
       }
        
       .lebel2{
             font-weight: 10px;
-            font-size: 150%;
-            font-family:  'Arial', sans-serif;  
+            font-size: 120%;
+            font-family:  Arial, sans-serif;
       }
 
       .btn1{
             
-            margin: 40px 0px 0px 200px;
-            color: white;
-            background-color: dodgerblue;
+            margin: 50px 0px 0px 200px;
+            color:white;
+            background-color:rgb(36, 131, 226);
             height: 50px;
-            width: 630px;
+            width: 550px;
+            border-style: none;
+            border-radius: 10px;
       } 
             
 
 }
 
-
-@media(max-width:450px){ 
-
-      .Employee1{
-            margin-left: 100px;
-            margin-top: 30px;
-      }
-
-      .Employee1 input[type=text]{
-            width: 350px;
-            padding: 20px 10px 20px 20px;
-            margin-left: 130px;
-            border-radius: 3px;
-            box-sizing: border-box;
-      }
-      .Employee{
-            margin-top: 100px;
-            margin-left:100px;
-      }
-      .Employee input[type=text]{
-            width: 350px;
-            padding: 20px 10px 20px 20px;
-            margin-left: 200px;
-            border-radius: 3px;
-            box-sizing: border-box;
-      }
-
-      .lebel1{
-            margin-top: 10px;
-            font-weight: 100px;
-            font-size: 200%;
-            font-family:  'Arial', sans-serif;
-           
-      }
-       
-      .lebel2{
-            font-weight: 10px;
-            font-size: 200%;
-            font-family:  'Arial', sans-serif;  
-      }
-
-      .btn1{
-            
-            margin: 40px 0px 0px 100px;
-            color: white;
-            background-color: dodgerblue;
-            height: 50px;
-            width: 720px;
-      } 
-            
-
+.pt1{
+      
 }

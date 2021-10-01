@@ -45,10 +45,18 @@ function UploadRecord() {
             if(h===12){
                 h = 12
             }
-            else if(h>12){
-                h=h-12
+            if(h>12){
+                h= h-12
             }
-            const time = h + ":"+ d.getMinutes() +" "+suffix
+            if(h<10){
+                  h= "0"+h
+            }
+            var m = d.getMinutes()
+            if(m<10){
+                  m= "0"+m
+            }
+
+            const time = h + ":"+ m +" "+suffix
             const date =(monthNames[d.getMonth()] +" " + d.getDate() +" " +d.getFullYear() + " "+ time)  
             const object ={
                   id:myState.FileData.length > 0 ? myState.FileData[myState.FileData.length-1].id + 1 : 1,
@@ -85,11 +93,11 @@ function UploadRecord() {
                 <h5 className="mb-3">
                 <strong></strong>
                 </h5>
-                    <table className="table table-striped">
+                    <table className="table  table-striped">
                         <thead>
-                        <tr>
+                        <tr  className="">
                             <th>#</th>
-                            <th>Username</th>
+                            <th  className="pl-5 ml-5">Username</th>
                             <th>Date</th>
                             <th></th>
                         </tr>
@@ -99,10 +107,10 @@ function UploadRecord() {
                              fileData &&(fileData).map((Element,index)=>{
                                        const {id,name,date} = Element
                                        return (
-                                             <tr><td>{index+1}</td>
-                                             <td>{name}</td>
-                                             <td >{date}</td>
-                                             <td><a href={item} download={name} onClick={Download}><button type="button" className="btn-primary">Download</button></a> <button onClick={()=>dataClear(name,id)} className="btn-danger">Remove</button></td>
+                                             <tr><td className="">{index+1}</td>
+                                             <td className="pt-3 pl-5 ml-5" >{name}</td>
+                                             <td className=" pt-3 ">{date}</td>
+                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className="btn-primary  ">Download</button></a> <button onClick={()=>dataClear(name,id)} className="btn-danger  ">Remove</button></td>
                                              </tr>
                                        )
                                  })

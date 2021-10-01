@@ -78,7 +78,7 @@ function Employee() {
             <div className="container mb-5">
             <div className="row">
              <div className="col-12 mx-auto text-center"> 
-                <h5 className="mb-3">
+                <h5 className="mb-4">
                 <strong>Employee Table</strong>
                 </h5>
                     <table className="table table-striped">
@@ -96,7 +96,7 @@ function Employee() {
                             <td><input  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
                             <td><input  type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
                             <td><input  type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
-                            <td><button type="button" onClick={handleSubmit} className="btn-primary">ADD</button></td>
+                            <td><button type="button" onClick={handleSubmit} className="btn-primary">Add</button></td>
                             
                        </tr>
                         <tbody>
