@@ -99,7 +99,7 @@ function Employee() {
                             <td><input  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
                             <td><input  type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
                             <td><input  type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
-                            <td><button type="button" onClick={handleSubmit} className="btn-primary">Add</button></td>
+                            <td><button type="button" onClick={handleSubmit} className="btn btn-primary" style={{width: "85px"}}>Add</button></td>
                             
                        </tr>
                         <tbody>
@@ -122,7 +122,7 @@ function Employee() {
                                              type:'company',
                                              value:event.target.value}))} value={company} onBlur={()=>update2(id,company)}/></td>
 
-                                       <td><button  onClick={()=>dataDelete1(id)}  className="btn-danger">Remove</button></td>
+                                       <td><button  onClick={()=>dataDelete1(id)}  className="btn btn-danger">Remove</button></td>
                                        </tr>
                            )
                            

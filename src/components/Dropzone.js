@@ -15,7 +15,7 @@ const Dropzone = ({ onDrop}) => {
         {isDragActive ? (
           <p className="dropzone-content">Release to drop the files here</p>
         ) : (
-          <p className="dropzone-content">
+          <p className="dropzone-content pb-4 pt-1">
             Drag 'n' drop some files here, or click to select files
           </p>
         )}

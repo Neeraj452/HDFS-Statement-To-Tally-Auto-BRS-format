@@ -6,7 +6,7 @@ function Report() {
             <div>    
             <HomeScreen/>       
              <div>
-               <h1>WellCome to Report</h1>    
+               <h1>WelCome to Reporter</h1>    
             </div>
             </div>
 
