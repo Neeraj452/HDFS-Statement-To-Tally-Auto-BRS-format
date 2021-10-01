@@ -2,7 +2,6 @@
 import React from "react";
 import './App.css';
 import { Route, Switch} from 'react-router-dom';
-import HomeScreen from "./components/HomeScreen";
 import UserInput from "./components/UserInput"
 import Employee from "./components/Employee";
 import UploadRecord from "./components/UploadRecord";
@@ -12,7 +11,7 @@ import Report from "./components/Report";
 const  App= ()=> {
   return (
     <div>
-  <HomeScreen/>
+  
     <Switch>
     <Route exact path="/">
     <UserInput/>

@@ -1,4 +1,4 @@
-.UserInput{
+/* .UserInput{
       margin-top: 110px;
 }
 
@@ -120,4 +120,21 @@
 
 .pt1{
       
+} */
+
+.margin1
+{
+      margin-left: 150px;
+}
+.margin2{
+
+      margin-left: 170px;
+}
+.font-size{
+      font-size: 120%;
+} 
+
+
+.mt1{
+      margin-top: 240px;
 }

@@ -6,17 +6,40 @@ const UserInput=()=> {
       const history = useHistory() 
       const handleSubmit=()=>{
             history.push('/Employee')
+       
       }
       return (
-            <div className="UserInput">
-                  <div className="Employee">
-                  <lebel className="lebel1">AWS Token</lebel><input type="text" value="**************"></input>
-                  </div>
-                  <div className="Employee1">
-                  <lebel className="lebel2">AWS Secret Key</lebel><input type="text" value="AKIAJSIE27KKMHXI3BJQ"/>
-                  </div>
-                 <button type="button" className="btn1" onClick={handleSubmit}>Submit</button>
-                 </div>
+               <div className="container mt1">
+                  <div className="row register ">
+                     <div className="col-sm-3"></div>
+                     <div className="col-sm-6 reg">
+                           <form className="form-horizontal hr">
+                                 <div className="form-group form-inline">
+                                       <div  className="control-label col-sm-7" >
+                                       <lebel className="font-size "> AWS Token </lebel>
+                                       </div>
+
+                                       <div className="col-sm-4">
+                                             <input type="text" className=" form-control "></input>
+                                       </div>
+                                 </div>
+
+                                 <div className="form-group form-inline">
+                                 <div  className="control-label col-sm-7" >
+                                       <lebel className="font-size "> AWS Secret Key </lebel>
+                                       </div>
+                                       <div className="col-sm-5 ">
+                                             <input type="text" className="form-control"></input>
+                                       </div>
+                                 </div>
+                           </form>
+                           <button type="submit" className="mt-4 btn btn-primary btn-lg btn-block" onClick={handleSubmit}>Submit</button>
+                     </div>
+               </div>
+               </div>
+
+            
+             
       )
 }
 export default UserInput;

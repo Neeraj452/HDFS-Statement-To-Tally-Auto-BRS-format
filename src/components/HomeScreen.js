@@ -1,6 +1,4 @@
 import React, { Fragment, createRef } from "react";
-// import { Button, DropdownButton, Dropdown } from 'react-bootstrap'
-// import {FilePicker} from 'react-file-picker'
 import Config from "../utils/Config";
 import { userDetailsClear, showStateToFalse, convertButtonClick, accDetailsStatus, onAccountsFetched} from '../actions/AccountStatementAction'
 import { connect } from "react-redux";

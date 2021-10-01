@@ -1,5 +1,6 @@
 import React, {useState, useEffect,useCallback} from 'react'
 import { useSelector, useDispatch} from 'react-redux';
+import HomeScreen from "../components/HomeScreen";
 import {fileUpload,fileClear} from '../actions/AccountStatementAction'
 import Dropzone from './Dropzone';
 function UploadRecord() {
@@ -81,8 +82,9 @@ function UploadRecord() {
       
 }
 
-      return ( 
-         
+      return( 
+      <div>
+            <HomeScreen/> 
             <div className="container mb-5">
                    <main className="App">
                   <Dropzone onDrop={onDrop}  />
@@ -121,7 +123,7 @@ function UploadRecord() {
             </div>
               }
     </div>
-
+    </div>
 
       )
 }
