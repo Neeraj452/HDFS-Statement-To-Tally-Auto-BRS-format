@@ -110,7 +110,7 @@ function UploadRecord() {
                                              <tr><td className="">{index+1}</td>
                                              <td className="pt-3 pl-5 ml-5" >{name}</td>
                                              <td className=" pt-3 ">{date}</td>
-                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className="btn-primary  ">Download</button></a> <button onClick={()=>dataClear(name,id)} className="btn-danger  ">Remove</button></td>
+                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className="btn-primary  ">Download</button></a> <button onClick={()=>dataClear(name,id)} className="btn-danger ml-2  ">Remove</button></td>
                                              </tr>
                                        )
                                  })
