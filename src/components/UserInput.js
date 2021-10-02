@@ -19,15 +19,15 @@ const UserInput=()=> {
                      <div className="mh-100"  style={{margin:"160px"}}>
            
                   <div className="row ">
-                     <div className="col-lg-2 col-xs-0"></div>
-                     <div className="col-xs-10 col-md-9 col-lg-9 ">
+                     <div className="col-lg-2 col-0"></div>
+                     <div className="col-12 col-md-9 col-lg-9 ">
                            <form className="form-horizontal hr">
                                  <div className="form-group form-inline">
                                        <div  className="control-label col-lg-6" >
                                        <lebel className="font-size "> AWS Token </lebel>
                                        </div>
 
-                                       <div className="col-lg-4">
+                                       <div className="col-lg-4 col-xs-4">
                                              <input type="text" className=" form-control "></input>
                                        </div>
                                  </div>
@@ -41,7 +41,7 @@ const UserInput=()=> {
                                  </div>
                                  
                            </form>
-                           <div  className="col-xl-11 col-sm-12 col-md-11 col-lg-12" >
+                           <div  className=" col-sm-12 col-md-11 col-lg-12 col-xl-11" >
                                  <button type="submit" className=" btn btn-primary btn-lg btn-block" onClick={handleSubmit}>Submit</button>
                                  </div>
                      </div>

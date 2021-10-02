@@ -87,11 +87,11 @@ function Employee() {
                     <table className="table table-striped">
                         <thead>
                         <tr>
-                            <th>#</th>
-                            <th>Username</th>
-                            <th>Full name</th>
-                            <th>Company</th>
-                            <th></th>
+                            <th className="col-xs-2">#</th>
+                            <th className="col-xs-2">Username</th>
+                            <th className="col-xs-2">Full name</th>
+                            <th className="col-xs-2">Company</th>
+                            <th className="col-xs-2"></th>
                         </tr>
                         </thead>
                         <tr className="input2">
