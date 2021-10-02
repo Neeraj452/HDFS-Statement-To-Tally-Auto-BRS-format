@@ -36,11 +36,8 @@ function Employee() {
                   full_name:full_name,
                   company:company
             })
-          
-            getData(db.products, data => {
-            dispatch(addList(data))
-           
-                });
+            getData1()
+            
                 setUsername("")
                 setFull_name("")
                 setCompany("")
