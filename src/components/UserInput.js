@@ -18,9 +18,9 @@ const UserInput=()=> {
                </div>
                      <div className="mh-100"  style={{margin:"160px"}}>
            
-                  <div className="row register">
-                     <div className="col-sm-2"></div>
-                     <div className="col-sm-9 ">
+                  <div className="row ">
+                     <div className="col-lg-2 col-xs-0"></div>
+                     <div className="col-xs-10 col-md-9 col-lg-9 ">
                            <form className="form-horizontal hr">
                                  <div className="form-group form-inline">
                                        <div  className="control-label col-lg-6" >
