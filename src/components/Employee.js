@@ -2,7 +2,6 @@ import React, {useState,useEffect} from 'react'
 import productdb, {
       bulkcreate,getData} from './DB'
 import { useSelector, useDispatch } from 'react-redux';
-import HomeScreen from "../components/HomeScreen";
 import {addList, employeeUpdate,dataDelete} from '../actions/AccountStatementAction'
 
 function Employee() {
@@ -74,7 +73,7 @@ function Employee() {
       
       return (
             <div>
-            <HomeScreen/>
+         
             <div className="container mb-5">
             <div className="row">
              <div className="col-12 mx-auto text-center"> 

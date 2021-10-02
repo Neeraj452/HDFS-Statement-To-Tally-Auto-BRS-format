@@ -8,6 +8,7 @@ import { bindActionCreators } from "redux";
 import XLSCSVFileTransformer from "../utils/XLSCSVFileTransformer";
 import AccountNumbersUtils from "../utils/AccountNumbersUtils";
 import Utils from "../utils/utils";
+
 import { NavLink} from 'react-router-dom';
 
  class HomeScreen extends React.Component {
@@ -38,6 +39,8 @@ import { NavLink} from 'react-router-dom';
             let btnDisable = document.querySelector("#modalBtn");
             this.state.customerId === "Select" ? btnDisable.disabled = true : btnDisable.disabled = false;
         }
+        
+       
     }
      renderHeader = () => {
          return (

@@ -1,6 +1,6 @@
 import React, {useState, useEffect,useCallback} from 'react'
 import { useSelector, useDispatch} from 'react-redux';
-import HomeScreen from "../components/HomeScreen";
+
 import {fileUpload,fileClear} from '../actions/AccountStatementAction'
 import Dropzone from './Dropzone';
 function UploadRecord() {
@@ -12,10 +12,12 @@ function UploadRecord() {
       console.log("fileData", fileData)
       const cartItems=JSON.parse(localStorage.getItem("FileData"))
      
+     
       const onDrop = useCallback(acceptedFiles => {
             handalFile(acceptedFiles);
           });
-
+     
+          
       
          
           fileData.sort((a, b) =>{
@@ -23,11 +25,16 @@ function UploadRecord() {
                 db = (new Date(b.date)).getTime()/1000.0;
             return db - da;
            });
-       
-    
+      
        useEffect(()=>{
-           setfileData(cartItems)
-     
+            if(cartItems===null){
+                  setfileData([])
+            }
+            else
+            {
+                  setfileData(cartItems)
+            }
+        
        },[myState.FileData]) 
 
       const handalFile=(files)=>{
@@ -65,6 +72,7 @@ function UploadRecord() {
                   date:date
             }
             dispatch(fileUpload(object))
+          
       }
 
        const dataClear= (name,id)=>{
@@ -84,12 +92,12 @@ function UploadRecord() {
 
       return( 
       <div>
-            <HomeScreen/> 
+ 
             <div className="container mb-5">
                    <main className="App">
                   <Dropzone onDrop={onDrop}  />
                      </main>
-          { fileData.length>0 &&        
+          {fileData.length>0 &&        
             <div className="row">
              <div className="col-12 mx-auto text-center"> 
                 <h5 className="mb-3">
@@ -122,7 +130,7 @@ function UploadRecord() {
                     </table>
             </div>
             </div>
-              }
+}
     </div>
     </div>
 
