@@ -84,15 +84,15 @@ function Employee() {
                     <table className="table table-striped ">
                         <thead>
                         <tr className="">
-                            <th className="col-sm-2">#</th>
-                            <th className="col-sm-2">Username</th>
-                            <th className="col-sm-2">Full name</th>
-                            <th className="col-sm-2">Company</th>
-                            <th className="col-sm-2"></th>
+                            <th className="col">#</th>
+                            <th className="col">Username</th>
+                            <th className="col">Full name</th>
+                            <th className="col">Company</th>
+                            <th className="col"></th>
                         </tr>
                         </thead>
                         <tr className="">
-                       <td className="col-sm-2"></td>
+                       <td className="col"></td>
                             <td className=" pt-3"><input className=""  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
                             <td className=" pt-3"><input className="" type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
                             <td className=" pt-3"><input className="" type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
@@ -103,22 +103,22 @@ function Employee() {
                       myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
                            const {id,username,full_name,company}=Element;
                            return (<tr>
-                                       <td className="col-sm-2 pt-3">{index+1}</td>
-                                       <td className="col-sm-2 pt-3"><input className="" value={username} onChange={(event)=> dispatch(employeeUpdate({
+                                       <td className="col pt-3">{index+1}</td>
+                                       <td className="col pt-3"><input className="" value={username} onChange={(event)=> dispatch(employeeUpdate({
                                                    index: index,
                                                    type: 'username',
                                                    value: event.target.value
                                                    }))} onBlur={()=>update1(id,username)}/></td>   
-                                       <td className="col-sm-2 pt-3"><input className=""  onChange ={(event)=>dispatch(employeeUpdate({
+                                       <td className="col pt-3"><input className=""  onChange ={(event)=>dispatch(employeeUpdate({
                                              index:index,
                                              type:'fullname',
                                              value:event.target.value}))} value={full_name} onBlur={()=>update(id,full_name)}/></td>
-                                       <td className="col-sm-2 pt-3"> <input className="" onChange={(event)=> dispatch(employeeUpdate({
+                                       <td className="col pt-3"> <input className="" onChange={(event)=> dispatch(employeeUpdate({
                                              index:index,
                                              type:'company',
                                              value:event.target.value}))} value={company} onBlur={()=>update2(id,company)}/></td>
 
-                                       <td className="col-sm-2"><button  onClick={()=>dataDelete1(id)}  className="btn btn-danger">Remove</button></td>
+                                       <td className="col"><button  onClick={()=>dataDelete1(id)}  className="btn btn-danger">Remove</button></td>
                                        </tr>
                            )
                            
