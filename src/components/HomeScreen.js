@@ -14,20 +14,13 @@ import { NavLink} from 'react-router-dom';
 
     constructor(props){
     super(props)
-    console.log("props.location",props.location)
     this.state ={
         customerId : "Select",
-        
         file : []
     }  
     
 }
-//     headerShow =(props)=>{
-//      this.setState({
-//          headers1:false
-//      })
-   
-//    }
+
 
     
     

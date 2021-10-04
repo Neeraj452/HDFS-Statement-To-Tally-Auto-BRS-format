@@ -81,9 +81,9 @@ function Employee() {
                 <h5 className="mb-4">
                 <strong>Employee Table</strong>
                 </h5>
-                    <table className="table table-striped">
+                    <table className="table table-striped ">
                         <thead>
-                        <tr>
+                        <tr className="">
                             <th className="col-sm-2">#</th>
                             <th className="col-sm-2">Username</th>
                             <th className="col-sm-2">Full name</th>
@@ -93,28 +93,27 @@ function Employee() {
                         </thead>
                         <tr className="input2">
                        <td className="col-sm-2"></td>
-                            <td className="col-sm-2"><input  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
-                            <td className="col-sm-2"><input  type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
-                            <td className="col-sm-2"><input  type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
-                            <td className="col-sm-2"><button type="button" onClick={handleSubmit} className="btn btn-primary" style={{width: "80px"}}>Add</button></td>
-                            
+                            <td className="col-sm-2 pt-3"><input className="p-1"  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
+                            <td className="col-sm-2 pt-3"><input className="p-1" type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
+                            <td className="col-sm-2 pt-3"><input className="p-1" type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
+                            <td className="col-sm-2 pt-3"><button  type="button" onClick={handleSubmit} className="btn btn-primary" style={{width: "80px"}}>Add</button></td>
                        </tr>
                         <tbody>
                         {
                       myState.EmployeeData[0] && (myState.EmployeeData).map((Element,index)=>{
                            const {id,username,full_name,company}=Element;
                            return (<tr>
-                                       <td className="col-sm-2">{index+1}</td>
-                                       <td className="col-sm-2"><input  value={username} onChange={(event)=> dispatch(employeeUpdate({
+                                       <td className="col-sm-2 pt-3">{index+1}</td>
+                                       <td className="col-sm-2 pt-3"><input className="p-1" value={username} onChange={(event)=> dispatch(employeeUpdate({
                                                    index: index,
                                                    type: 'username',
                                                    value: event.target.value
                                                    }))} onBlur={()=>update1(id,username)}/></td>   
-                                       <td className="col-sm-2"><input  onChange ={(event)=>dispatch(employeeUpdate({
+                                       <td className="col-sm-2 pt-3"><input className="p-1"  onChange ={(event)=>dispatch(employeeUpdate({
                                              index:index,
                                              type:'fullname',
                                              value:event.target.value}))} value={full_name} onBlur={()=>update(id,full_name)}/></td>
-                                       <td className="col-sm-2"> <input onChange={(event)=> dispatch(employeeUpdate({
+                                       <td className="col-sm-2 pt-3"> <input className="p-1" onChange={(event)=> dispatch(employeeUpdate({
                                              index:index,
                                              type:'company',
                                              value:event.target.value}))} value={company} onBlur={()=>update2(id,company)}/></td>
