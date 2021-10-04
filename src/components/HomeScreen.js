@@ -12,8 +12,8 @@ import { NavLink} from 'react-router-dom';
 
  class HomeScreen extends React.Component {
 
-    constructor(props){
-    super(props)
+    constructor(){
+    super()
     this.state ={
         customerId : "Select",
         file : []

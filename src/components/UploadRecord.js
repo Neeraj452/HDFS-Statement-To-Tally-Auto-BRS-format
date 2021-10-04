@@ -118,11 +118,11 @@ function UploadRecord() {
                              fileData &&(fileData).map((Element,index)=>{
                                        const {id,name,date} = Element
                                        return (
-                                             <tr><td className="col-sm-2 pt-3">{index+1}</td>
-                                             <td className="col-sm-3 pt-3" >{name}</td>
-                                             <td className=" col-sm-3 pt-3 ">{date}</td>
-                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className=" btn btn-primary mr-1">Download</button></a> 
-                                             <button onClick={()=>dataClear(name,id)} className=" btn btn-danger col-sm-4 ">Remove</button></td>
+                                             <tr><td className="col-sm-2 py-4">{index+1}</td>
+                                             <td className="col-sm-3 py-4" >{name}</td>
+                                             <td className=" col-sm-3 py-4">{date}</td>
+                                             <td className="pt-3"><a href={item} download={name} onClick={Download}><button type="button" className=" btn btn-primary mr-1">Download</button></a> 
+                                             <button onClick={()=>dataClear(name,id)} className=" btn btn-danger col-sm-4  ">Remove</button></td>
                                              </tr>
                                        )
                                  })

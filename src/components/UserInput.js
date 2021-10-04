@@ -16,9 +16,8 @@ const UserInput=()=> {
       return (
 
 
-           <div className="container mb-5">
-             <div class="d-flex justify-content-center align-items-center center " >
-              <div className="row col-7">
+           <div className="container">
+              <div className="row col-7 center align-items-center d-flex justify-content-center">
                 <form className="form-horizontal hr">
                   <div className="form-group form-inline">
                     <div className="control-label col-sm-4 col-lg-5">
@@ -51,40 +50,7 @@ const UserInput=()=> {
               </div>
             </div>
 
-           </div>
-      
-            // <div class="d-flex justify-content-center align-items-center  mt-5" >
-            //   <div className="row ">
-            //     <form className="form-horizontal hr">
-            //       <div className="form-group form-inline">
-            //         <div className="control-label col-lg-6">
-            //           <lebel className="font-size "> AWS Token </lebel>
-            //         </div>
-        
-            //         <div className="col-lg-4 col-xs-4">
-            //           <input type="text" className=" form-control "></input>
-            //         </div>
-            //       </div>
-            //       <div className="form-group form-inline">
-            //         <div className="control-label col-lg-6">
-            //           <lebel className="font-size "> AWS Secret Key </lebel>
-            //         </div>
-            //         <div className="col-lg-4 ">
-            //           <input type="text" className="form-control"></input>
-            //         </div>
-            //       </div>
-            //     </form>
-            //     <div className=" col-9 col-sm-6 col-md-6 col-lg-10">
-            //       <button
-            //         type="submit"
-            //         className=" btn btn-primary btn-lg btn-block"
-            //         onClick={handleSubmit}
-            //       >
-            //         Submit
-            //       </button>
-            //     </div>
-            //   </div>
-            // </div>
+    
      
           );
 }
