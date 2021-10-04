@@ -92,7 +92,7 @@ function UploadRecord() {
 }
 
       return( 
-      <div>
+      
  
             <div className="container mb-5">
                    <main className="App">
@@ -100,17 +100,17 @@ function UploadRecord() {
                      </main>
           {fileData.length>0 &&        
             <div className="row">
-             <div className="col-12 mx-auto text-center"> 
+             <div className="col-12 mx-auto"> 
                 <h5 className="mb-3">
                 <strong></strong>
                 </h5>
                     <table className="table  table-striped">
                         <thead>
                         <tr  className="">
-                            <th>#</th>
-                            <th  className="pl-5 ml-5">Username</th>
-                            <th>Date</th>
-                            <th></th>
+                            <th className="col-sm-2">#</th>
+                            <th  className="col-sm-3">Username</th>
+                            <th className="col-sm-3">Date</th>
+                            <th className="col-sm-3"></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -118,11 +118,11 @@ function UploadRecord() {
                              fileData &&(fileData).map((Element,index)=>{
                                        const {id,name,date} = Element
                                        return (
-                                             <tr><td className="">{index+1}</td>
-                                             <td className="pt-3 pl-5 ml-5" >{name}</td>
-                                             <td className=" pt-3 ">{date}</td>
-                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className=" btn btn-primary">Download</button></a> 
-                                             <button onClick={()=>dataClear(name,id)} className=" btn btn-danger ml-2">Remove</button></td>
+                                             <tr><td className="col-sm-2">{index+1}</td>
+                                             <td className="col-sm-3" >{name}</td>
+                                             <td className=" col-sm-3 ">{date}</td>
+                                             <td className=""><a href={item} download={name} onClick={Download}><button type="button" className=" btn btn-primary mr-1">Download</button></a> 
+                                             <button onClick={()=>dataClear(name,id)} className=" btn btn-danger col-sm-4 ">Remove</button></td>
                                              </tr>
                                        )
                                  })
@@ -132,7 +132,6 @@ function UploadRecord() {
             </div>
             </div>
 }
-    </div>
     </div>
 
       )
