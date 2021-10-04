@@ -78,7 +78,7 @@ import { NavLink} from 'react-router-dom';
 
                                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li> <NavLink className="
-                                            dropdown-item" to="/Employee" onClick={this.headerShow}>Employee</NavLink></li>
+                                            dropdown-item" to="/Employee">Employee</NavLink></li>
                                              
                                             <li> <NavLink className="
                                             dropdown-item" to="/UploadRecord">Upload Record</NavLink></li>
