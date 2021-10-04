@@ -1,4 +1,4 @@
-import React, { Fragment, createRef } from "react";
+import React, { Fragment } from "react";
 import Config from "../utils/Config";
 import { userDetailsClear, showStateToFalse, convertButtonClick, accDetailsStatus, onAccountsFetched} from '../actions/AccountStatementAction'
 import { connect } from "react-redux";
@@ -8,15 +8,28 @@ import { bindActionCreators } from "redux";
 import XLSCSVFileTransformer from "../utils/XLSCSVFileTransformer";
 import AccountNumbersUtils from "../utils/AccountNumbersUtils";
 import Utils from "../utils/utils";
-
 import { NavLink} from 'react-router-dom';
 
  class HomeScreen extends React.Component {
-    state ={
+
+    constructor(props){
+    super(props)
+    console.log("props.location",props.location)
+    this.state ={
         customerId : "Select",
+        
         file : []
-    }
-    textInput = createRef()
+    }  
+    
+}
+//     headerShow =(props)=>{
+//      this.setState({
+//          headers1:false
+//      })
+   
+//    }
+
+    
     
     convertHandle = async () => {
         await this.props.convertButtonClick();
@@ -53,7 +66,10 @@ import { NavLink} from 'react-router-dom';
                              <div className="icon my-1"></div>
                              <div className="icon my-1"></div>
                          </button>
-                         <div className="navbar-collapse collapse" id="navbarCollapse">
+                    
+                        {this.props.accountStatement.hearder ? null :
+                            <div>
+                                <div className="navbar-collapse collapse" id="navbarCollapse">
                              <ul className="navbar-nav nav-pills ml-auto mt-2">
                                  {/* {this.props.accountStatement.allusers && this.props.accountStatement.allusers.length ? <li className="nav-item"><a onClick={this.convertHandle} className={`nav-link pointer ${this.props.accountStatement.show ? 'active' : ''}`}>Convert</a></li> : ""} */}
                                  <li className="nav-item dropdown">
@@ -62,7 +78,7 @@ import { NavLink} from 'react-router-dom';
 
                                      <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                             <li> <NavLink className="
-                                            dropdown-item" to="/Employee">Employee</NavLink></li>
+                                            dropdown-item" to="/Employee" onClick={this.headerShow}>Employee</NavLink></li>
                                              
                                             <li> <NavLink className="
                                             dropdown-item" to="/UploadRecord">Upload Record</NavLink></li>
@@ -83,6 +99,8 @@ import { NavLink} from 'react-router-dom';
                                  <li><a className="nav-item nav-link pointer" href="mailto:info@rjs.in"  >Contact</a></li>
                              </ul>
                          </div>
+                         </div>
+                         }
                      </div>
                  </nav>
                  <div className="container">

@@ -1,14 +1,20 @@
-import React from 'react';
-import HomeScreen from "../components/HomeScreen";
+import React,{useEffect} from 'react';
+
+import {headerShow} from '../actions/AccountStatementAction'
+import {useDispatch} from 'react-redux'
 
 function Report() {
+     const dispatch = useDispatch()
+
+      useEffect(() => {
+           dispatch(headerShow())
+      }, [])
       return (
-            <div>    
-            <HomeScreen/>       
+            <div>          
              <div>
                <h1>WelCome to Reporter</h1>    
             </div>
-            </div>
+            </div> 
 
 )
 }

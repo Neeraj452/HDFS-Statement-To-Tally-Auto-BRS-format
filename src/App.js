@@ -10,15 +10,13 @@ import HomeScreen from "./components/HomeScreen";
 
 
 const  App= ()=> {
-  const location = useLocation();
-  
+  const location = useLocation();  
   return (
     <div>
       <HomeScreen location={location}/>
-
     <Switch>
     <Route exact path="/">
-    <UserInput />
+    <UserInput/>
     </Route>
     <Route path="/Employee">
       <Employee/>

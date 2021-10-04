@@ -1,7 +1,7 @@
 import React, {useState, useEffect,useCallback} from 'react'
 import { useSelector, useDispatch} from 'react-redux';
 
-import {fileUpload,fileClear} from '../actions/AccountStatementAction'
+import {fileUpload,fileClear,headerShow} from '../actions/AccountStatementAction'
 import Dropzone from './Dropzone';
 function UploadRecord() {
       const [item, setitem] = useState("")
@@ -34,6 +34,7 @@ function UploadRecord() {
             {
                   setfileData(cartItems)
             }
+            dispatch(headerShow(false)) 
         
        },[myState.FileData]) 
 

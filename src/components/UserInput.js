@@ -1,15 +1,21 @@
-import React from 'react'
-import { useHistory } from 'react-router';
-
-
-
+import React,{useEffect} from 'react'
+import { useHistory,useLocation} from 'react-router';
+import { useDispatch } from 'react-redux';
+import {headerShow} from '../actions/AccountStatementAction'
 const UserInput=()=> {
       const history = useHistory() 
       const handleSubmit=()=>{
             history.push('/Employee')
       }
+      const dispatch=useDispatch()
+    const location = useLocation()
+    console.log("location1",location)
+    useEffect(() => {
+       dispatch(headerShow(true)) 
+    },[])
       return (
-            <div class="d-flex justify-content-center align-items-center h-25" >
+      
+            <div class="d-flex justify-content-center align-items-center  mt-5" >
               <div className="row ">
                 <form className="form-horizontal hr">
                   <div className="form-group form-inline">
@@ -41,6 +47,7 @@ const UserInput=()=> {
                 </div>
               </div>
             </div>
+     
           );
 }
 export default UserInput;

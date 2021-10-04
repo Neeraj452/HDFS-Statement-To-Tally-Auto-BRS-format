@@ -1,6 +1,7 @@
 
 
 const Config = {
+    HEARDER:"HEARDER",
     FILECLEAR:"FILECLEAR",
     FILEUPLOAD:"FILEUPLOAD",
     ADD:"ADD",

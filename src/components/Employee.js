@@ -2,7 +2,7 @@ import React, {useState,useEffect} from 'react'
 import productdb, {
       bulkcreate,getData} from './DB'
 import { useSelector, useDispatch } from 'react-redux';
-import {addList, employeeUpdate,dataDelete} from '../actions/AccountStatementAction'
+import {addList, employeeUpdate,dataDelete,headerShow} from '../actions/AccountStatementAction'
 
 function Employee() {
     
@@ -24,7 +24,8 @@ function Employee() {
           })}
       
       useEffect(() => {
-            getData1() 
+            getData1()
+            dispatch(headerShow(false)) 
             
       },[])
      

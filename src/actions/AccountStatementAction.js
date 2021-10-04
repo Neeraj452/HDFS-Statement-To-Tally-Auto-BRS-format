@@ -31,6 +31,10 @@ export const fileClear = (res) => ({
     data:res
 });
 
+export const headerShow = (res) => ({
+    type: Config.HEARDER,
+    data:res
+});
 
 
 
