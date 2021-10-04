@@ -1,7 +1,7 @@
 // App.js - WEB
 import React from "react";
 import './App.css';
-import { Route, Switch,useLocation} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 import UserInput from "./components/UserInput"
 import Employee from "./components/Employee";
 import UploadRecord from "./components/UploadRecord";
@@ -9,11 +9,10 @@ import Report from "./components/Report";
 import HomeScreen from "./components/HomeScreen";
 
 
-const  App= ()=> {
-  const location = useLocation();  
+const  App= ()=> { 
   return (
     <div>
-      <HomeScreen location={location}/>
+      <HomeScreen />
     <Switch>
     <Route exact path="/">
     <UserInput/>
