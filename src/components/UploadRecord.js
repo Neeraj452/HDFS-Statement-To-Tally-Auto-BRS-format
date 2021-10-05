@@ -149,12 +149,16 @@ function UploadRecord() {
 }
 
 {show && <Modal show={show}>
-       <Modal.Header>Conformation</Modal.Header>
-       <Modal.Body>Are you sure to remove this record </Modal.Body>
+       <Modal.Header><h3>Remove Record</h3>
+                   <button className="close" onClick={()=>setShow(false)} data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                            </button>
+      </Modal.Header>
+       <Modal.Body>Are you sure want to remove this record </Modal.Body>
 
        <Modal.Footer>
-             <Button onClick={()=>dataClear(name,id)}>Remove</Button>
-             <Button onClick={()=>setShow(false)}>Close</Button>
+             <Button onClick={()=>dataClear(name,id)}>Yes</Button>
+            
        </Modal.Footer>
      </Modal>}
     </div>

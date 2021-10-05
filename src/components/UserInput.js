@@ -33,9 +33,13 @@ const UserInput=()=> {
         <div>
    
    {show && <Modal show={show}>
-       <Modal.Header>Error</Modal.Header>
-       <Modal.Body>Please fill the value</Modal.Body>
-       <Modal.Footer><Button  onClick={()=>setShow(false)}>Close</Button></Modal.Footer>
+       <Modal.Header><h3>Login</h3>
+       <button className="close" onClick={()=>setShow(false)} data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+       </Modal.Header>
+       <Modal.Body>Please enter all Details</Modal.Body>
+       <Modal.Footer></Modal.Footer>
      </Modal>}
        
            <div className="container">

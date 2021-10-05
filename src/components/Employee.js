@@ -47,12 +47,13 @@ function Employee() {
                   full_name:full_name,
                   company:company
             })
-      }
+      
             getData1()
             
                 setUsername("")
                 setFull_name("")
                 setCompany("")
+      }      
                 
       }
     
@@ -70,13 +71,31 @@ function Employee() {
            }) 
       
       const update =(id,full_name)=>{
+            var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if( format.test(full_name))
+            {
+                  setShowSpecial(true)
+            }
+            else{
             db.products.update(id,{"full_name":full_name}) 
-      } 
+      } }
       const update1 =(id,username)=>{
+            var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if(format.test(username))
+            {
+                  setShowSpecial(true)
+            }
+            else{
             db.products.update(id,{"username":username}) 
-      }
+            }      }
       const update2 =(id,company)=>{
+            var format = /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]+/;
+            if(format.test(company))
+            {
+                  setShowSpecial(true)
+            }else{
             db.products.update(id,{"company":company}) 
+            }
       }
       const modalShow=(id)=>{
             setId(id)
@@ -114,7 +133,7 @@ function Employee() {
                        <td className=""></td>
                             <td className=" pt-3"><input className=""  type="text" onChange={(event)=> setUsername(event.target.value)}  onfocus="this.value=''" value={username}/></td>
                             <td className=" pt-3"><input className="" type="text" onChange={(event)=> setFull_name(event.target.value)}  value={full_name}/></td>
-                            <td className=" pt-3"><input id="company"  className="" type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
+                            <td className=" pt-3"><input id="company" name="company" autoComplete="company" className="" type="text" onChange={(event)=> setCompany(event.target.value)}   value={company}/></td>
                             <td className=" pt-3"><button  type="submit" onClick={handleSubmit} className="btn btn-primary" style={{width: "80px"}}>Add</button></td>
                        </tr>
                         <tbody>
@@ -151,18 +170,27 @@ function Employee() {
             </div>
         </div>
         {show && <Modal show={show}>
-       <Modal.Header>Conformation</Modal.Header>
-       <Modal.Body>Are you sure to remove this records </Modal.Body>
+       <Modal.Header><h3>Remove Employee</h3>
+       <button className="close" onClick={()=>setShow(false)} data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+       </Modal.Header>
+       <Modal.Body>Are you sure want to remove this employee</Modal.Body>
 
        <Modal.Footer>
-             <Button onClick={()=>dataDelete1(id)}>Remove</Button>
-             <Button onClick={()=>setShow(false)}>Close</Button>
+             <Button onClick={()=>dataDelete1(id)}>Yes</Button>
+           
        </Modal.Footer>
      </Modal>}
      {showSpecial && <Modal show={showSpecial}>
-       <Modal.Header>Error</Modal.Header>
+       <Modal.Header><h3>Error</h3>
+       <button className="close" onClick={()=>setShowSpecial(false)} data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+       </Modal.Header>
        <Modal.Body>Please Remove Special Charactors </Modal.Body>
-       <Modal.Footer><Button  onClick={()=>setShowSpecial(false)}>Close</Button></Modal.Footer>
+       <Modal.Footer>
+       </Modal.Footer>
      </Modal>}
     </div>  
       )
