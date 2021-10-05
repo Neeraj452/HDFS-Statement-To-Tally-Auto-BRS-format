@@ -84,7 +84,6 @@ export function accountStatementReducer (state = INITIAL_STATE, action) {
  
             case Config.HEARDER:
                 state.hearder=action.data
-                console.log("action.data",state.hearder)
                 return{...state}
 
 

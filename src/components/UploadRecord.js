@@ -1,10 +1,14 @@
 import React, {useState, useEffect,useCallback} from 'react'
 import { useSelector, useDispatch} from 'react-redux';
+import { Button, Modal } from 'react-bootstrap';
 
 import {fileUpload,fileClear,headerShow} from '../actions/AccountStatementAction'
 import Dropzone from './Dropzone';
 function UploadRecord() {
       const [item, setitem] = useState("")
+      const [show, setShow]= useState(false) 
+      const [id, setId] = useState("")
+      const [name, setName] = useState("")
       const [fileData,setfileData]=useState([])
       const dispatch = useDispatch()
       const myState = useSelector((store)=> store.accountStatementReducer)
@@ -75,12 +79,21 @@ function UploadRecord() {
             dispatch(fileUpload(object))
           
       }
+      const modalShow=(name,id)=>{
+            setId(id)
+            setName(name)
+            setShow(true)
+
+
+      }
 
        const dataClear= (name,id)=>{
             const a=localStorage.removeItem(name)
             console.log(a)
             dispatch(fileClear(id))
+            setShow(false)
        }
+
        
       const Download =()=>{
             myState.FileData.map((Element)=>{
@@ -104,6 +117,7 @@ function UploadRecord() {
                 <h5 className="mb-3">
                 <strong></strong>
                 </h5>
+      
                     <table className="table  table-striped">
                         <thead>
                         <tr  className="">
@@ -122,7 +136,8 @@ function UploadRecord() {
                                              <td className="col-sm-3 py-4" >{name}</td>
                                              <td className=" col-sm-3 py-4">{date}</td>
                                              <td className="pt-3"><a href={item} download={name} onClick={Download}><button type="button" className=" btn btn-primary mr-1">Download</button></a> 
-                                             <button onClick={()=>dataClear(name,id)} className=" btn btn-danger col-sm-4  ">Remove</button></td>
+                                             <button type="button" onClick={()=>modalShow(name,id)} className=" btn btn-danger col-sm-4  ">Remove</button>
+                                          </td> 
                                              </tr>
                                        )
                                  })
@@ -132,6 +147,16 @@ function UploadRecord() {
             </div>
             </div>
 }
+
+{show && <Modal show={show}>
+       <Modal.Header>Conformation</Modal.Header>
+       <Modal.Body>Are you sure to remove this record </Modal.Body>
+
+       <Modal.Footer>
+             <Button onClick={()=>dataClear(name,id)}>Remove</Button>
+             <Button onClick={()=>setShow(false)}>Close</Button>
+       </Modal.Footer>
+     </Modal>}
     </div>
 
       )
